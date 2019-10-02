@@ -39,7 +39,7 @@ class App extends Component {
         let result = 0;
         for(let i=0;i<res.length;i++){
           if(this.isOperator(res[i])){
-              let a = parseInt(res[i-1]);
+              let a = parseInt(res[i-1]) ||0;
               let b = parseInt(res[i+1]) || 0;
 
               if(res[i]==='+'){
@@ -79,20 +79,25 @@ class App extends Component {
   onClick = button =>{
 
     if(button === '='){
-      this.calculate();
+      if(this.state.result !== '0' && this.state.result !==0 ){
+        this.calculate();
+      }
     }
     else if(button === 'clear'){
       this.reset();
     }
     else if(this.isOperator(button)){
-      this.setState({
-        result:this.state.result + ` ${button} `
-        });
+      if(this.state.result !== '0' && this.state.result !==0 ){
+        this.setState({
+          result:this.state.result + ` ${button} `
+          });
+      }
+      
     }
     else if(button === 'sign'){
       this.setState({
-        result:-parseInt(this.state.result),
-        display: -parseInt(this.state.display)
+        result: `- ${this.state.result}`,
+        display: `- ${this.state.display}`
       })
     }
     else if(button === 'sq'){
