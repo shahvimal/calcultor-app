@@ -1,7 +1,29 @@
 .App {
   text-align: center;
+  background: #ffffff
+}
+.lightApp{
+  background: #ffffff;
 }
 
+.darkApp{
+  background: black;
+}
+
+.lightApp button{
+  color:black;
+  background: gray;
+}
+
+.darkApp button{
+  color:white;
+  background: #666;
+}
+
+button{
+  color:black;
+  background: gray;
+}
 .App-logo {
   height: 40vmin;
 }
@@ -19,4 +41,20 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+h1{ 
+  text-align:center; 
+  margin:auto;
+  margin-top: 10px;
+  vertical-align:middle;
+  width: 210px; 
+  color:green; 
+  border: solid black 2px; 
+} 
+
+.calculator-bd{
+  justify-content: center;
+  align-items: center;
+  text-align: center
 }
